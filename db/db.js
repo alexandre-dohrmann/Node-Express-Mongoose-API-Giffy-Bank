@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/moviesOne');
 
+const url = "mongodb://localhost:27017/gif";
+mongoose.connect(url, { useNewUrlParser: true });
 
 
 

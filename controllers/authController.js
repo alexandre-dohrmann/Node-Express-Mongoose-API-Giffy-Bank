@@ -6,7 +6,7 @@ const User = require('../models/user');
 router.post('/', async (req, res) => {
     console.log(req.session, ' this is session')
     try {
-        const createdGif = await User.create(req.body);
+        const createdUser = await User.create(req.body);
         req.session.logged = true;
         req.session.username = req.body.username;
 

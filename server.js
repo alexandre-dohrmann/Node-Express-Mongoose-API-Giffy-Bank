@@ -12,7 +12,7 @@ require('./db/db');
 
 // Setting up session
 app.use(session({
-	secret: "insert_subject_string_here",
+	secret: "giffy me",
 	resave: false,
 	saveUninitialized: false
 }));
@@ -30,12 +30,12 @@ const corsOptions = {
   app.use(cors(corsOptions));
 
 // GIF controller
-const movieController = require('./controllers/gifController');
+const gifController = require('./controllers/gifController');
 
 // Auth Controller
 const authController  = require('./controllers/authController');
 
-app.use('/api/v1/movies', movieController);
+app.use('/api/v1/gifs', gifController);
 
 app.use('/auth/login', authController);
 app.use((req, res, next) => {

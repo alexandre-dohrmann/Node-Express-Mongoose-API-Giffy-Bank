@@ -32,7 +32,7 @@ console.log("Create Route");
 
         res.json({
             status: 200,
-            data: createdMovie
+            data: createdGIF
         });
 
     } catch(err) {

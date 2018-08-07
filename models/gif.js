@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const gifSchema = new mongoose.Schema({
-  URL: String,
+  url: String,
   description: String,
 });
 

@@ -1,32 +1,24 @@
-console.log("controllers/auth.js is running...");
 
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-const session = require('express-session');
-const bcrypt = require('bcrypt');
 
 router.post('/', async (req, res) => {
-console.log(req.session, ' this is session')
+    console.log(req.session, ' this is session')
     try {
-        //
-    } catch(err) {
-        res.send(err);
+        const createdGif = await User.create(req.body);
+        req.session.logged = true;
+        req.session.username = req.body.username;
+
+        res.json({
+            status: 200,
+            data: 'login successful'
+        });
+    } catch (err) {
         console.log(err);
+        res.send(err);
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

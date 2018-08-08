@@ -24,11 +24,9 @@ console.log("Index Route");
 // Create Route
 router.post('/', async (req, res) => {
 console.log("Create Route");
+console.log(req.body);
     try {
         const createdGIF = await GIF.create(req.body);
-
-        req.session.logged = true;
-        req.session.username = req.body.username;
 
         res.json({
             status: 200,

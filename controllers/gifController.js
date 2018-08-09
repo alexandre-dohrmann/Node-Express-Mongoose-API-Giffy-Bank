@@ -79,7 +79,7 @@ console.log("Update Route");
 router.delete('/:id', async (req, res) => {
 
     try {
-        const deletedGIF = await GIF.findByIdAndRemove(req.param.id);
+        const deletedGIF = await GIF.findByIdAndRemove(req.params.id);
 
         res.json({
             status: 200,

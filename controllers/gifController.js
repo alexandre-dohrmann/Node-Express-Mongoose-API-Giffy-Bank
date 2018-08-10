@@ -24,11 +24,9 @@ console.log("Index Route");
 // Create Route
 router.post('/', async (req, res) => {
 console.log("Create Route");
+console.log(req.body);
     try {
         const createdGIF = await GIF.create(req.body);
-
-        req.session.logged = true;
-        req.session.username = req.body.username;
 
         res.json({
             status: 200,
@@ -81,7 +79,7 @@ console.log("Update Route");
 router.delete('/:id', async (req, res) => {
 
     try {
-        const deletedGIF = await GIF.findByIdAndRemove(req.param.id);
+        const deletedGIF = await GIF.findByIdAndRemove(req.params.id);
 
         res.json({
             status: 200,
